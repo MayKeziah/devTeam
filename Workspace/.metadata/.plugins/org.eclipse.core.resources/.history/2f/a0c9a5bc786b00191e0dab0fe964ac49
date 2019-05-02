@@ -1,0 +1,14 @@
+package buttonControls;
+
+public class InputParser {
+	String input;
+	String output;
+	
+	public InputParser() {
+		
+	}
+	public InputParser(String input) {
+		this.input = input;
+	}
+
+}

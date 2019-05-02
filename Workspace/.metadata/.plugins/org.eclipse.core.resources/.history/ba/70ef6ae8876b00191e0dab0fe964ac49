@@ -1,0 +1,26 @@
+package buttonControls;
+
+public class InputParser {
+	String input;
+	String output;
+	
+	public InputParser() {
+		this("");
+	}
+	public InputParser(String input) {
+		this.input = input;
+		this.output = parsePEMDAS();
+	}
+	
+	/**
+	 * Note: PE_MD_AS, separate in order.
+	 * Ex:	"(ab + b^c)^d + (e/f) - g - h"
+	 * 		"(ab + b^c( ^d + (e/f(  - g - h"
+	 * 		 
+	 * @return
+	 */
+	private String[][] parsePEMDAS(){
+		input.replace(")", "(");
+	}
+
+}

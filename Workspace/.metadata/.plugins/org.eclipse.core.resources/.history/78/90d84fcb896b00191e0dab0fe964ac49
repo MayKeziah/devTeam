@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package buttonControls;
+
+/**
+ * @author E
+ *
+ */
+public interface Calculator {
+
+}

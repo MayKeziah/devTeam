@@ -1,0 +1,33 @@
+package buttonControls;
+
+import java.util.Arrays;
+
+public class InputParser {
+	String input;
+	String output;
+	
+	public InputParser() {
+		this("");
+	}
+	public InputParser(String input) {
+		this.input = input;
+//		this.output = parseMDAS();
+	}
+	
+	/**
+	 * Note: PE_MD_AS, separate in order.
+	 * Ex:	"a*b+c/d-e+f"
+	 * 		 
+	 * @return
+	 */
+	public void parseMDAS(){
+		char[] newInput = new char[input.length()];
+		for (int i = 0; i < input.length(); i++) {
+			newInput[i] = input.charAt(i);
+			System.out.println(input.charAt(i));
+		}
+		Arrays.toString(newInput);
+		
+	}
+
+}

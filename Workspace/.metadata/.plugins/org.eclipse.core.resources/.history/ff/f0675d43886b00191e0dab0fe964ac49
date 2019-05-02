@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package buttonControls;
+
+/**
+ * @author E
+ *
+ */
+public class ParseClient {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		InputParser test = new InputParser("1+2*3-4/3");
+		test.
+	}
+
+}

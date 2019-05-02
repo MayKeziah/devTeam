@@ -1,0 +1,43 @@
+package buttonControls;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class InputParser {
+	String input;
+//	String output;
+	
+	public InputParser() {
+		this("");
+	}
+	public InputParser(String input) {
+		this.input = input;
+//		this.output = parseMDAS();
+	}
+	
+	public int parseAddSub() {
+		String[] inList = input.split("\\+");
+		Double sum = 0.0;
+//		ArrayList<Double> toAdd = new ArrayList<Double>();
+//		ArrayList<Double> toSub = new ArrayList<Double>();
+		System.out.println(Arrays.toString(inList));
+		for (String elt: inList) {
+			if(!elt.contains("-")) {
+//				toAdd.add(Double.parseDouble(elt));
+				sum += Double.parseDouble(elt);
+			}else {
+				String[] temp = elt.split("-");
+				for(String num: temp) {
+//					toSub.add(Double.parseDouble(num));
+					sum -= Double.parseDouble(num);				}
+			}
+		}
+		System.out.println(toAdd.toString());
+		System.out.println(toSub.toString());
+		System.out.println(sum);
+
+		return 0;
+		
+	}
+
+}

@@ -1,0 +1,26 @@
+package buttonControls;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class InputParser {
+	String input;
+//	String output;
+	
+	public InputParser() {
+		this("");
+	}
+	public InputParser(String input) {
+		this.input = input;
+//		this.output = parseMDAS();
+	}
+	
+	public int parseAddSub() {
+		String[] inList = input.split("\\+");
+		ArrayList<Double> toAdd = new ArrayList<Double>();
+		Arrays.toString(inList);
+		return 0;
+		
+	}
+
+}

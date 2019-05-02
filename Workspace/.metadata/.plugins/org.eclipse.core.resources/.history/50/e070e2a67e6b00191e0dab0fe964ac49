@@ -1,0 +1,27 @@
+package buttonControls;
+
+public class InputParser {
+	String input;
+	String output;
+	
+	public InputParser() {
+		this("");
+	}
+	public InputParser(String input) {
+		this.input = input;
+		this.output = parse();
+	}
+	
+	private String[][] parsePlusMinus() {
+		//Note: PE_MD_AS, separate in opposite order.
+		String[] toAdd = input.split("+");
+		String[][] toSubt = toSubtract(toAdd);
+		return String[0][];
+	}
+	
+	private String[][] toSubtract(String[] toAdd){
+		
+		return new String[0][];
+	}
+
+}
