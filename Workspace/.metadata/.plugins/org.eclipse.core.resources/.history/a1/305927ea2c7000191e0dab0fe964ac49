@@ -68,7 +68,6 @@ public class InputParser {
 	}
 	public static Double parseExp(String input) {
 		
-		return null;
 	}
 
 }

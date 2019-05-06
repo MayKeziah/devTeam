@@ -64,11 +64,6 @@ public class InputParser {
 	
 	public static Double parseParenthesis(String input) {
 		
-		return null;
-	}
-	public static Double parseExp(String input) {
-		
-		return null;
 	}
 
 }
