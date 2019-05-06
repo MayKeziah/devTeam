@@ -23,6 +23,7 @@ public class InputParser {
 	public static Double parseAddSub(String input) {
 		String[] inList = input.split("\\+");
 		Double sum = 0.0;
+		System.out.println(Arrays.toString(inList));
 		for (String elt: inList) {
 			//for all the elements that are not subtracted, add them.
 			if(!elt.contains("-")) {
@@ -49,6 +50,7 @@ public class InputParser {
 	public static Double parseMultDiv(String input) {
 		String[] inList = input.split("\\*");
 		Double product = 1.0;
+		System.out.println(Arrays.toString(inList));
 		for (String elt: inList) {
 			if(!elt.contains("/")) {
 				product *= Double.parseDouble(elt);
