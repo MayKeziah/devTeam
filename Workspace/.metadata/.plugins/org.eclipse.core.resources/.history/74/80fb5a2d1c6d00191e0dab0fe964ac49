@@ -62,19 +62,8 @@ public class InputParser {
 		return product;
 	}
 	
-	/**
-	 * This is an exponent method which takes a real number and an integer and raises
-	 * the number to the integer power. 
-	 * @param x the number to multiply
-	 * @param n the power to raise x to. 
-	 * @return x^n
-	 */
-	public static Double exp(Double x, int n) {
-		Double product = 1.0;
-		for (int i = 0; i < n; i++) {
-			product *= x;
-		}
-		
+	public static Double exp(Double x, Double n) {
+		Double product = 0.0;
 		return product;
 	}
 

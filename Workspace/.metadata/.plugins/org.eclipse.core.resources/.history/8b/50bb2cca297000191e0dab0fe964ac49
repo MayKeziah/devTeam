@@ -13,5 +13,4 @@ public interface Calculator {
 	public double multiply(double a, double b);
 	public double divide(double a, double b);
 //	public double exponent(double a, double b);
-	public double parenthesis(String a);
 }
