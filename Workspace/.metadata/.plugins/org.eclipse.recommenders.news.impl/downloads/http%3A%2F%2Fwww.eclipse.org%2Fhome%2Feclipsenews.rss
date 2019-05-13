@@ -9,6 +9,30 @@
       <title>eclipse.org</title>
       <link>http://www.eclipse.org</link>
     </image>
+     <item>
+      <title><![CDATA[Frequently Asked Questions About Jakarta EE 8]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/mike-milinkovich/frequently-asked-questions-about-jakarta-ee-8]]></link>
+      <description><![CDATA[Have questions about Jakarta EE 8? Check out Mike Milinkovich's newest FAQ blog!]]></description>
+      <pubDate>Wed, 08 May 2019 10:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+     <item>
+      <title><![CDATA[Eclipse Contributor Agreement 3.0]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/wayne-beaton/eclipse-contributor-agreement-30]]></link>
+      <description><![CDATA[The Eclipse Foundation's IP Team has been working hard to get the various agreements that we maintain between the Eclipse Foundation and community updated.]]></description>
+      <pubDate>Wed, 08 May 2019 10:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
+    <item>
+      <title><![CDATA[Update on Jakarta EE Rights to Java Trademarks]]></title>
+      <link><![CDATA[https://blogs.eclipse.org/post/mike-milinkovich/update-jakarta-ee-rights-java-trademarks]]></link>
+      <description><![CDATA[Summary of progress to date and implications of the agreement between Eclipse and Oracle on Jakarta EE and use of Java trademarks and the javax namespace.]]></description>
+      <pubDate>Fri, 03 May 2019 15:00:00 EST</pubDate>
+      <category>news</category>
+      <pressrelease>0</pressrelease>
+    </item>
     <item>
       <title><![CDATA[Eclipse Foundation on the move!]]></title>
       <link><![CDATA[https://blogs.eclipse.org/post/mike-milinkovich/eclipse-foundation-move]]></link>

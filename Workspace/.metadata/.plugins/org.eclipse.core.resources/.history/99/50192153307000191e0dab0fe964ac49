@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class InputParser {
 	String input;
-	Double output;
+	double output;
 	
 	public InputParser() {
 		this("");
