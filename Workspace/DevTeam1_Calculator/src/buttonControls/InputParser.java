@@ -47,16 +47,16 @@ public class InputParser {
 	 * @return the product/quotient of the expression given.
 	 */
 	public static Double parseMultDiv(String input) {
-		String[] inList = input.split("\\*");
+		String[] inList = input.split("x");
 		Double product = 1.0;
 		for (String elt: inList) {
 			if(!elt.contains("/")) {
-				product *= Double.parseDouble(elt);
+				product *= parseExp(elt);//bad
 			}else {
 				String[] temp = elt.split("/");
-				product *= Double.parseDouble(temp[0]);
+				product *= parseExp(temp[0]);//Bad
 				for(int i = 1; i < temp.length; i++) {
-					product /= Double.parseDouble(temp[i]);
+					product /= parseExp(temp[i]);//BAD
 				}
 			}
 		}
@@ -67,9 +67,23 @@ public class InputParser {
 		
 		return null;
 	}
+	
+	
+	//BAD
 	public static Double parseExp(String input) {
-		
-		return null;
+		String[] inList = input.split("\\^");
+		Double base;
+		Double solution = 1.0;
+		Double currSolution;
+		for (int i = 0; i < inList.length; i+=2) {
+			base = Double.parseDouble(inList[i]);
+			currSolution = 1.0;
+			for (int j = 0; j < Integer.parseInt(inList[i + 1]); j++) {
+				currSolution *= base;
+			}
+			solution += currSolution;
+		}
+		return solution;
 	}
 
 }

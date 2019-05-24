@@ -1,7 +1,0 @@
-package buttonControls;
-
-public class InputParser {
-	String input;
-	String output;
-
-}

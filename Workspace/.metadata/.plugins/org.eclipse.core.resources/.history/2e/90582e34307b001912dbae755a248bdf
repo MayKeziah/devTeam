@@ -1,0 +1,80 @@
+package buttonControls;
+
+import java.util.Arrays;
+
+public class InputParser {
+	String input;
+	Double output;
+	
+	public InputParser() {
+		this("");
+	}
+	public InputParser(String input) {
+		this.input = input;
+//		this.output = parseMDAS();
+	}
+	
+	/**
+	 * Given an input string containing only expressions of addition
+	 * and subtraction, this method will return the sum of these values as a double.
+	 * @param input an input String
+	 * @return the sum of the expression given.
+	 */
+	public static Double parseAddSub(String input) {
+		String[] inList = input.split("\\+");
+		Double sum = 0.0;
+		for (String elt: inList) {
+			//for all the elements that are not subtracted, add them.
+			if(!elt.contains("-")) {
+					sum += parseMultDiv(elt);
+			}
+			//for all the elements that ARE subtracted, subtract them.
+			else {
+				String[] temp = elt.split("-");
+					sum += parseMultDiv(temp[0]);
+				for(int i = 1; i < temp.length; i++) {
+						sum -= parseMultDiv(temp[i]);;
+				}
+			}
+		}
+		return sum;
+	}
+	
+	/**
+	 * Given an input string containing only expressions of Multiplication and
+	 * division, this method will return the product/quotient of these values as a double.
+	 * @param input an input string
+	 * @return the product/quotient of the expression given.
+	 */
+	public static Double parseMultDiv(String input) {
+		String[] inList = input.split("x");
+		Double product = 1.0;
+		for (String elt: inList) {
+			if(!elt.contains("/")) {
+				product *= Double.parseDouble(elt);
+			}else {
+				String[] temp = elt.split("/");
+				product *= Double.parseDouble(temp[0]);
+				for(int i = 1; i < temp.length; i++) {
+					product /= Double.parseDouble(temp[i]);
+				}
+			}
+		}
+		return product;
+	}
+	
+	public static Double parseParenthesis(String input) {
+		
+		return null;
+	}
+	
+	public static Double parseExp(String input) {
+		String[] inList = input.split("^");
+		Double base = Double.parseDouble(inList[0]);
+		Double solution = 1.0;
+		for (String elt: inList) {
+				 base *= Double.parseDouble(elt);
+		return ;
+	}
+
+}
