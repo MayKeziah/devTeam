@@ -1,15 +1,15 @@
 package buttonControls;
 
 public class InputParser {
+//	String input;
+//	Double output;
 	
-	/**
-	 * Given an input string, this method will return a string 
-	 * representation of the Double created by executing the 
-	 * mathematical operations given.
-	 * 
-	 * @param input a string representing numbers and mathematical operators
-	 * @return a string representing the result of those numbers and operators.
-	 */
+//	public InputParser() {	}
+//	public InputParser(String input) {
+//		this.input = input;
+//		this.output = parseMDAS();
+//	}
+	
 	public static String parse(String input) {
 		return "" + parseAddSub(input);
 	}
