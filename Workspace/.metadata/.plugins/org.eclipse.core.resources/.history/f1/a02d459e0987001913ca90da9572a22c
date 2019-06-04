@@ -1,24 +1,5 @@
 package buttonControls;
 
-/**
- * This class, given an input string of numbers and operators from a calculator, returns
- * a string representation of the mathematical result.
- * 
- * It can only handle:
- *  > Real numbers
- *  > Addition
- *  > Subtraction
- *  > Multiplication
- *  > Division
- * 
- * Example string:
- * "1x2/2+3+4x5-6-7x2"
- * Would return:
- * "4.0"
- * 
- * @author Keziah May
- * @version v.1 Spring 2019
- */
 public class InputParser {
 	
 	/**
@@ -81,5 +62,28 @@ public class InputParser {
 		}
 		return product;
 	}
+	
+//	private static Double parseParenthesis(String input) {
+//		
+//		return null;
+//	}
+	
+	
+	//BAD
+//	private static Double parseExp(String input) {
+//		String[] inList = input.split("\\^");
+//		Double base;
+//		Double solution = 1.0;
+//		Double currSolution;
+//		for (int i = 0; i < inList.length; i+=2) {
+//			base = Double.parseDouble(inList[i]);
+//			currSolution = 1.0;
+//			for (int j = 0; j < Integer.parseInt(inList[i + 1]); j++) {
+//				currSolution *= base;
+//			}
+//			solution += currSolution;
+//		}
+//		return solution;
+//	}
 
 }

@@ -4,12 +4,7 @@ package buttonControls;
  * This class, given an input string of numbers and operators from a calculator, returns
  * a string representation of the mathematical result.
  * 
- * It can only handle:
- *  > Real numbers
- *  > Addition
- *  > Subtraction
- *  > Multiplication
- *  > Division
+ * 
  * 
  * Example string:
  * "1x2/2+3+4x5-6-7x2"

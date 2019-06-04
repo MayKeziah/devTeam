@@ -92,9 +92,6 @@ public class Calculator extends JFrame
     private JMenuItem view;
     private JMenuItem about;
     
-    /**
-     * String to be displayed when people select the "About Calculator" menu item
-     */
     private String aboutInfo = 
     		"   This was written as the culminating project for the Project Development division of the scc.devTeam( ), a branch of the\r\n" + 
     		"   Computer Science and Engineering Club (CSEC) at Seattle Central College (SCC) in Spring 2019.\r\n" + 
