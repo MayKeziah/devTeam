@@ -81,17 +81,16 @@ public class Calculator extends JFrame
     /**
      * Options menu fields
      */
-    private JMenuBar 	menuBar;
-    private JMenu 		file;
-    private JMenu 		edit;
-    private JMenu 		help;
-    private JMenuItem 	close;
-    private JMenuItem 	copy;
-    private JMenuItem 	darkMode;
-    private JMenuItem 	lightMode;
-    private JMenuItem 	about;
-//  private JMenuItem 	view;
-
+    private JMenuBar menuBar;
+    private JMenu file;
+    private JMenu edit;
+    private JMenu help;
+    private JMenuItem close;
+    private JMenuItem copy;
+    private JMenuItem darkMode;
+    private JMenuItem lightMode;
+//    private JMenuItem view;
+    private JMenuItem about;
     
     /**
      * String to be displayed when people select the "About Calculator" menu item

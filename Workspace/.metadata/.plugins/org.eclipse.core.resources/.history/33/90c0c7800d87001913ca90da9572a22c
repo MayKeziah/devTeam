@@ -63,7 +63,6 @@ public class InputParser {
 	/**
 	 * Given an input string containing only expressions of Multiplication and
 	 * division, this method will return the product/quotient of these values as a double.
-	 * 
 	 * @param input an input string
 	 * @return the product/quotient of the expression given.
 	 */
