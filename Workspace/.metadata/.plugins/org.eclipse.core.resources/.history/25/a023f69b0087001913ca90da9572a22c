@@ -417,7 +417,7 @@ public class Calculator extends JFrame
 
     private void sendUI(Calculator app) {
         app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        app.setSize(307,443);
+        app.setSize(310,440);
         app.setResizable(false);
         app.setLayout(null);
         app.setLocationRelativeTo(null);
