@@ -3,12 +3,31 @@
  */
 package display;
 
-/**
- * Write a description of class Calculator here.
+/******************************************************************************************************************************************
+ * This class defines a basic calculator application which is able to perform simple mathematical operations including:
+ *  > Addition
+ *  > Subtraction
+ *  > Multiplication
+ *  > Division
+ *  
+ *  <p>
+ *  This was written as the culminating project for the Project Development division of the scc.devTeam( ), a branch of the
+ *  Computer Science and Engineering Club (CSEC) at Seattle Central College (SCC) in Spring 2019.
+ *  
+ *  <p>
+ *  This project was proposed on April 29th, 2019 and it's first launch was June 3rd, 2019 after only 5 hours of meetings.
+ *   
+ *  <p>
+ *  Both members of the front end team, Christina and Yong, had completed one programming course, CSC110: "Intro to Programming: Python",
+ *  and they were enrolled in CSC142: "Computer Programming I: Java"
+ *  Michael of the back end team had completed CSC110, CSC142, and was enrolled in "Computer Programming II: Java"
+ *  Keziah of the back end team had completed CSC110, CSC142, CSC143, and was a TA for CSC142, 
+ *  Programming and Professional Development Coordinator for the CSEC, and founder/organizer of the scc.devTeam( )
+ *  
  *
- * @author Seattle Central Dev Team   
+ * @author scc.devTeam( ) Contributers: Front End: Christina McMahon, and Yong Long Tan, Back End: Keziah May, and Michael Rogers
  * @version Spring 2019
- */
+ ******************************************************************************************************************************************/
 import javax.swing.*;
 
 import buttonControls.InputParser;
@@ -19,14 +38,19 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.*;
 import java.awt.*;
 
+
 @SuppressWarnings("serial")
 public class Calculator extends JFrame
 {
-    private JTextArea display; 
+    /**
+     * The input/output display area
+     */
+	private JTextArea display; 
 
+	/**
+	 * The numerical buttons
+	 */
     private JButton zero;
-    private JButton decimal;
-    private JButton posneg;
     private JButton one;
     private JButton two;
     private JButton three;
@@ -36,15 +60,27 @@ public class Calculator extends JFrame
     private JButton seven;
     private JButton eight;
     private JButton nine;
+    
+    /**
+     * Misc. helper buttons
+     */
+    private JButton decimal;
+    private JButton posneg;
     private JButton clear;
     private JButton equal;
+    private JButton backspace;
 
+    /**
+     * Operator buttons
+     */
     private JButton addition;
     private JButton subtraction;
     private JButton multiplication;
     private JButton division;
-    private JButton backspace;
 
+    /**
+     * Options menu fields
+     */
     private JMenuBar menuBar;
     private JMenu file;
     private JMenu edit;
@@ -55,7 +91,36 @@ public class Calculator extends JFrame
     private JMenuItem lightMode;
     private JMenuItem view;
     private JMenuItem about;
+    
+    private String aboutInfo = 
+    		"   This was written as the culminating project for the Project Development division of the scc.devTeam( ), a branch of the\r\n" + 
+    		"   Computer Science and Engineering Club (CSEC) at Seattle Central College (SCC) in Spring 2019.\r\n" + 
+    		"   \r\n" + 
+    		"   This project was proposed on April 29th, 2019 and it's first launch was June 3rd, 2019 after only 5 hours of meetings.\r\n" + 
+    		"   \r\n" + 
+    		"   Front End:\r\n" +
+    	 	"   Christina and Yong, had completed one programming course, CSC110: \"Intro to Programming: Python\",\r\n" + 
+    		"   and they were enrolled in CSC142: \"Computer Programming I: Java\"\r\n" + 
+    	 	"   Back End:\r\n" +
+    		"   Michael of the back end team had completed CSC110, CSC142, and was enrolled in \"Computer Programming II: Java\"\r\n" + 
+    		"   Keziah of the back end team had completed CSC110, CSC142, CSC143, and was a TA for CSC142, \r\n" + 
+    		"   Programming and Professional Development Coordinator for the CSEC, and founder/organizer of the scc.devTeam( )\r\n" + 
+    		"   \r\n" + 
+    		"   \r\n" + 
+    		"   scc.devTeam( ) Contributers: \r\n" +
+    		"   Front End: Christina McMahon, and Yong Long Tan, \r\n" +
+    		"   Back End: Keziah May, and Michael Rogers\r\n" + 
+    		"   version: v.1 Spring 2019";
 
+    
+    
+    
+    
+    /***************************************************************************************************************
+     * When run, this opens the default calculator application.
+     * 
+     * @param args
+     ***************************************************************************************************************/
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -66,6 +131,13 @@ public class Calculator extends JFrame
         new Calculator();
     }
 
+    
+    
+    
+    
+    /***************************************************************************************************************
+     * Constructs a default calculator
+     ***************************************************************************************************************/
     public Calculator() {
         super("Calculator");
         sendMenuBar();
@@ -74,6 +146,13 @@ public class Calculator extends JFrame
         sendUI(this);
     }
 
+    
+    
+    
+    
+    /***************************************************************************************************************
+     * Defines the appearance of the menu/options bar
+     ***************************************************************************************************************/
     private void sendMenuBar() {
         menuBar = new JMenuBar();
         file = new JMenu(" File ");
@@ -89,6 +168,9 @@ public class Calculator extends JFrame
         menuBar.add(edit);
         menuBar.add(help);
 
+        /**
+         * When you click the Close button from the file menu, the application window closes and operations are terminated
+         */
         close.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e){
@@ -96,6 +178,11 @@ public class Calculator extends JFrame
                 }
             });
 
+        /**
+         * Copies the content of the display window to the clipboard.
+         * 
+         * TODO: copy display to clipboard
+         */
         copy.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -106,10 +193,15 @@ public class Calculator extends JFrame
                 }
             });
 
+        /**
+         * Opens a window with information about this calculator.
+         * 
+         * TODO: revise appearance of 'about' pop-up
+         */
         about.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    JOptionPane.showMessageDialog(null, "Calculator created by the Seattle Central Dev Team, Spring 2019",
+                    JOptionPane.showMessageDialog(null, aboutInfo,
                         "Calculator", JOptionPane.OK_OPTION);
                 }
             });
@@ -121,6 +213,13 @@ public class Calculator extends JFrame
         help.add(about);
     }
 
+    
+    
+    
+    
+    /***************************************************************************************************************
+     * Defines the appearance of the input/output display box
+     ***************************************************************************************************************/
     private void setDisplay() {
         display = new JTextArea();
 
@@ -137,7 +236,18 @@ public class Calculator extends JFrame
         add(display);
     }
 
+    
+    
+    
+    
+    /***************************************************************************************************************
+     * Defines the display text of buttons and their functionality.
+     ***************************************************************************************************************/
     private void setButtons() {
+    	
+    	/********************************************************
+    	 * Numerical Buttons:
+    	 ********************************************************/
         zero = new JButton("0");
         zero.setBounds(82,256,65,55);
         zero.addActionListener(new ActionListener() {
@@ -298,6 +408,12 @@ public class Calculator extends JFrame
             });
         add(nine);
 
+        
+        
+        
+    	/********************************************************
+    	 * Misc. Helper Buttons:
+    	 ********************************************************/
         decimal = new JButton(".");
         decimal.setBounds(10,256,65,55);
         add(decimal);
@@ -333,6 +449,29 @@ public class Calculator extends JFrame
         });
         add(equal);
 
+        backspace = new JButton("\u232b");
+        backspace.setBounds(226,316,65,55);
+        backspace.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (display.getText().length() > 13)
+                    return;
+                if (display.getText().equalsIgnoreCase("0")) {
+                    display.setText("0");
+                    return;
+                }
+                display.setText((display.getText().substring(0, display.getText().length()-1)));
+            }
+        });
+        
+        add(backspace);
+        
+        
+        
+        
+    	/********************************************************
+    	 * Operator Buttons:
+    	 ********************************************************/
         addition = new JButton("+");
         addition.setBounds(226,70,65,55);
         addition.addActionListener(new ActionListener() {
@@ -396,25 +535,18 @@ public class Calculator extends JFrame
             }
         });
         add(division);
-
-        backspace = new JButton("\u232b");
-        backspace.setBounds(226,316,65,55);
-        backspace.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (display.getText().length() > 13)
-                    return;
-                if (display.getText().equalsIgnoreCase("0")) {
-                    display.setText("0");
-                    return;
-                }
-                display.setText((display.getText().substring(0, display.getText().length()-1)));
-            }
-        });
-        
-        add(backspace);
     }
+    
+    
+    
+    
+    
 
+    /***************************************************************************************************************
+     * Defines the UI for your calculator
+     * 
+     * @param app
+     ***************************************************************************************************************/
     private void sendUI(Calculator app) {
         app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         app.setSize(307,443);
