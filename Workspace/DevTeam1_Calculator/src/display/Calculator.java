@@ -10,6 +10,9 @@ package display;
  * @version Spring 2019
  */
 import javax.swing.*;
+
+import buttonControls.InputParser;
+
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
@@ -310,6 +313,20 @@ public class Calculator extends JFrame
 
         equal = new JButton("=");
         equal.setBounds(10,318,137,55);
+        //new
+        equal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (display.getText().length() > 13)
+                    return;
+                if (display.getText().equalsIgnoreCase("0")) {
+                    display.setText("0");
+                    return;
+                }
+                display.setText(InputParser.parse(display.getText()));
+            }
+        });
+        //endnew
         add(equal);
 
         addition = new JButton("+");
