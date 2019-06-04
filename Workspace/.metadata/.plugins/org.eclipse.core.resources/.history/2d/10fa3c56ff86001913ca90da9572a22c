@@ -56,7 +56,7 @@ public class Calculator extends JFrame
     private JMenuItem view;
     private JMenuItem about;
 
-    public static void main(String[] args) {
+    public static void Main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             JFrame.setDefaultLookAndFeelDecorated(true);
@@ -309,10 +309,16 @@ public class Calculator extends JFrame
 
         clear = new JButton("C");
         clear.setBounds(154,318,65,55);
-        clear.addActionListener(new ActionListener() {
+        nine.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                display.setText("0");
+                if (display.getText().length() > 13)
+                    return;
+                if (display.getText().equalsIgnoreCase("0")) {
+                    display.setText("9");
+                    return;
+                }
+                display.append("9");
             }
         });
         add(clear);

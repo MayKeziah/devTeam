@@ -56,14 +56,15 @@ public class Calculator extends JFrame
     private JMenuItem view;
     private JMenuItem about;
 
-    public static void main(String[] args) {
+    public static void Main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             JFrame.setDefaultLookAndFeelDecorated(true);
         } catch(Exception e) {
             System.out.println("Could not load System look.");
         }
-        new Calculator();
+        
+        Calculator test = new Calculator();
     }
 
     public Calculator() {

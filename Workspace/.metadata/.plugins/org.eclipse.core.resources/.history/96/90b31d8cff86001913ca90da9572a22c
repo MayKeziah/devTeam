@@ -63,7 +63,8 @@ public class Calculator extends JFrame
         } catch(Exception e) {
             System.out.println("Could not load System look.");
         }
-        new Calculator();
+        
+        Calculator test = new Calculator();
     }
 
     public Calculator() {
