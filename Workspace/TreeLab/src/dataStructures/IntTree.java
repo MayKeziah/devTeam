@@ -41,6 +41,98 @@ public class IntTree {
 	}
 
 	/**
+	 * Returns the number of leaves in this tree.
+	 * 
+	 * @return number of leaves
+	 */
+	public int countLeaves() {
+		return countLeaves(overallRoot);
+	}
+
+	/**
+	 * Recursively counts the number of leaves in this tree.
+	 * @param root
+	 * @return the number of leaves found
+	 */
+	private int countLeaves(IntTreeNode root) {
+		if (root == null) {
+			return 0;
+		}else if (!root.hasLeft() && !root.hasRight()) {
+			return 1;
+		}else {
+			return countLeaves(root.right) + countLeaves(root.left);
+		}
+	}
+
+	public int countLevels() {
+		return countLevels(overallRoot);
+	}
+
+	private int countLevels(IntTreeNode root) {
+		if(root == null) {
+			return 0;
+		}
+		return 1 + Math.max(countLevels(root.left), countLevels(root.right));
+	}
+
+	/**
+	 * Get the tree's overall root
+	 * 
+	 * @return
+	 */
+	public IntTreeNode getRoot() {
+		return overallRoot;
+	}
+
+	/**
+	 * Prints a sideways view of this tree.
+	 */
+	public void print() {
+		System.out.println("Tree view:");
+		print(overallRoot, 0);
+		System.out.println();
+	}
+
+	/**
+	 * Recursively prints a sideways view of this tree.
+	 * @param root
+	 * @param level
+	 */
+	private void print(IntTreeNode root, int level) {
+		if (root != null) {
+			String levelTab = "";
+			for (int i = 0; i <= level; i++) {
+				levelTab += "\t";
+			}
+			print(root.right, level + 1);
+			System.out.println(levelTab + root);
+			print(root.left, level + 1);
+		}
+		
+	}
+
+	/**
+	 * Prints the contents of the tree in order
+	 */
+	public void printInorder() {
+		System.out.println("Inorder:");
+		printInorder(overallRoot);
+		System.out.println();
+	
+	}
+
+	/**
+	 * Private helper method recursively prints in order
+	 */
+	private void printInorder(IntTreeNode root) {
+		if(root != null) {
+			printInorder(root.left);
+			System.out.print(root + separator);
+			printInorder(root.right);
+		}
+	}
+
+	/**
 	 * Prints the contents of the tree in preorder
 	 */
 	public void printPreorder() {
@@ -84,62 +176,27 @@ public class IntTree {
 		}
 		
 	}
-
-	/**
-	 * Prints the contents of the tree in order
-	 */
-	public void printInorder() {
-		System.out.println("Inorder:");
-		printInorder(overallRoot);
-		System.out.println();
-
-	}
 	
 	/**
-	 * Private helper method recursively prints in order
-	 */
-	private void printInorder(IntTreeNode root) {
-		if(root != null) {
-			printInorder(root.left);
-			System.out.print(root + separator);
-			printInorder(root.right);
-		}
-	}
-	
-	/**
-	 * Get the tree's overall root
+	 * Returns the sum of the values stored in the Tree.
 	 * 
 	 * @return
 	 */
-	public IntTreeNode getRoot() {
-		return overallRoot;
+	public int sum() {
+		System.out.println("Sum:");
+		return sum(overallRoot);
 	}
-	
+
 	/**
-	 * Prints a sideways view of this tree.
-	 */
-	public void print() {
-		System.out.println("Tree view:");
-		print(overallRoot, 0);
-		System.out.println();
-	}
-	
-	/**
-	 * Recursively prints a sideways view of this tree.
+	 * Recursively calculates the sum of the values stored in the tree.
+	 * 
 	 * @param root
-	 * @param level
+	 * @return sum
 	 */
-	private void print(IntTreeNode root, int level) {
+	private int sum(IntTreeNode root) {
 		if (root != null) {
-			String levelTab = "";
-			for (int i = 0; i <= level; i++) {
-				levelTab += "\t";
-			}
-			print(root.right, level + 1);
-			System.out.println(levelTab + root);
-			print(root.left, level + 1);
-		}
-		
+			return root.data + sum(root.right) + sum(root.left);
+		} return 0;
 	}
 	
 }

@@ -7,6 +7,8 @@ import dataStructures.IntTree;
 import dataStructures.IntTreeNode;
 
 /**
+ * To test my int tree
+ * 
  * @author E
  *
  */
@@ -48,15 +50,23 @@ public class IntTreeClient {
 		//Test post-order
 		test1.printPostorder();
 		
+		
+		
+		
 		//Sequential Tree constructor test
 		IntTree test2 = new IntTree(1, 10);
 		
+		//Sequential tree test Inorder
 		test2.printInorder();
-		
+		//Sequential tree test print sideways
 		test2.print();
 		
-		
-
+		//Sequential tree test sum
+		System.out.println(test2.sum());
+		//Sequential tree test countLevels
+		System.out.println("Levels: " +  test2.countLevels());
+		//Sequential Tree test countLeaves
+		System.out.println("Leaves: " + test2.countLeaves());		
 
 
 	}
