@@ -3,4 +3,6 @@
 <fullyQualifiedTypeName name="buttonControls.InputParser"/>
 <fullyQualifiedTypeName name="dataStructures.IntTree"/>
 <fullyQualifiedTypeName name="dataStructures.IntTreeNode"/>
+<fullyQualifiedTypeName name="dataStructures.BinarySearchTree"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
